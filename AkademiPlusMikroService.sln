@@ -19,7 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AkademiPlus.IdentityServer"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discount", "Discount", "{43D4B4A3-3CF0-4F78-96CA-13E4A829DD0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkademiPlusMikroService.Discount", "Services\Discount\AkademiPlusMikroService.Discount\AkademiPlusMikroService.Discount.csproj", "{29A3689D-6D5B-4BE3-B853-C3E69D84599A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AkademiPlusMikroService.Discount", "Services\Discount\AkademiPlusMikroService.Discount\AkademiPlusMikroService.Discount.csproj", "{29A3689D-6D5B-4BE3-B853-C3E69D84599A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{FB33618A-9D30-4088-A3CC-3C1638DA2597}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkademiPlusMikroService.Basket", "Services\Basket\AkademiPlusMikroService.Basket\AkademiPlusMikroService.Basket.csproj", "{40A0C1B3-7015-4730-8006-9CEC07E2EB77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +47,10 @@ Global
 		{29A3689D-6D5B-4BE3-B853-C3E69D84599A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29A3689D-6D5B-4BE3-B853-C3E69D84599A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29A3689D-6D5B-4BE3-B853-C3E69D84599A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40A0C1B3-7015-4730-8006-9CEC07E2EB77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40A0C1B3-7015-4730-8006-9CEC07E2EB77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40A0C1B3-7015-4730-8006-9CEC07E2EB77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40A0C1B3-7015-4730-8006-9CEC07E2EB77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +62,8 @@ Global
 		{B005AB26-E533-472F-A84C-0479CB4F8AD2} = {AEF384BA-1130-4DF7-94BD-DAED96881E5A}
 		{43D4B4A3-3CF0-4F78-96CA-13E4A829DD0E} = {A791F734-67FC-4EBB-86C0-CFC3123FEB59}
 		{29A3689D-6D5B-4BE3-B853-C3E69D84599A} = {43D4B4A3-3CF0-4F78-96CA-13E4A829DD0E}
+		{FB33618A-9D30-4088-A3CC-3C1638DA2597} = {A791F734-67FC-4EBB-86C0-CFC3123FEB59}
+		{40A0C1B3-7015-4730-8006-9CEC07E2EB77} = {FB33618A-9D30-4088-A3CC-3C1638DA2597}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBBDEB5C-1531-46DD-A0B6-7BB875EC4EAF}
