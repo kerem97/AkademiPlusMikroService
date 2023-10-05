@@ -12,21 +12,23 @@ using System.Threading.Tasks;
 
 namespace AkademiPlus.Order.Core.Application.Features.CQRS.Handlers
 {
-    public class CreateAddressCommandHandler : IRequestHandler<CreateAddressCommandRequest, CreateAddressDto>
+    public class UpdateAddressCommandHandler : IRequestHandler<UpdateAddressCommandRequest, UpdateAddressDto>
     {
         private readonly IRepository<Address> _repository;
+
         private readonly IMapper _mapper;
 
-        public CreateAddressCommandHandler(IRepository<Address> repository, IMapper mapper)
+        public UpdateAddressCommandHandler(IRepository<Address> repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
         }
 
-        public async Task<CreateAddressDto> Handle(CreateAddressCommandRequest request, CancellationToken cancellationToken)
+        public async Task<UpdateAddressDto> Handle(UpdateAddressCommandRequest request, CancellationToken cancellationToken)
         {
-            var values = new Address
+            var value = new Address
             {
+                AddressId = request.AddressId,
                 City = request.City,
                 Detail = request.Detail,
                 District = request.District,
@@ -34,9 +36,9 @@ namespace AkademiPlus.Order.Core.Application.Features.CQRS.Handlers
 
             };
 
-            var result = await _repository.CreateAsync(values);
+            await _repository.UpdateAsync(value);
 
-            return _mapper.Map<CreateAddressDto>(result);
+            return _mapper.Map<UpdateAddressDto>(value);
         }
     }
 }

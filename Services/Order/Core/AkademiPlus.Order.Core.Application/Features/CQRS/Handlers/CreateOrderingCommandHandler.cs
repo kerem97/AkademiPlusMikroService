@@ -1,4 +1,4 @@
-﻿using AkademiPlus.Order.Core.Application.Dtos.AddressDtos;
+﻿using AkademiPlus.Order.Core.Application.Dtos.OrderingDtos;
 using AkademiPlus.Order.Core.Application.Features.CQRS.Commands;
 using AkademiPlus.Order.Core.Application.Interfaces;
 using AkademiPlus.Order.Core.Domain.Entities;
@@ -12,31 +12,29 @@ using System.Threading.Tasks;
 
 namespace AkademiPlus.Order.Core.Application.Features.CQRS.Handlers
 {
-    public class CreateAddressCommandHandler : IRequestHandler<CreateAddressCommandRequest, CreateAddressDto>
+    public class CreateOrderingCommandHandler : IRequestHandler<CreateOrderingCommandRequest, CreateOrderingDto>
     {
-        private readonly IRepository<Address> _repository;
+        private readonly IRepository<Ordering> _repository;
         private readonly IMapper _mapper;
 
-        public CreateAddressCommandHandler(IRepository<Address> repository, IMapper mapper)
+        public CreateOrderingCommandHandler(IRepository<Ordering> repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
         }
 
-        public async Task<CreateAddressDto> Handle(CreateAddressCommandRequest request, CancellationToken cancellationToken)
+        public async Task<CreateOrderingDto> Handle(CreateOrderingCommandRequest request, CancellationToken cancellationToken)
         {
-            var values = new Address
+            var values = new Ordering
             {
-                City = request.City,
-                Detail = request.Detail,
-                District = request.District,
+                OrderDate = request.OrderDate,
                 UserId = request.UserId,
-
+                TotalPrice = request.TotalPrice,
             };
 
             var result = await _repository.CreateAsync(values);
 
-            return _mapper.Map<CreateAddressDto>(result);
+            return _mapper.Map<CreateOrderingDto>(result);
         }
     }
 }
